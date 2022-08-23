@@ -1,10 +1,9 @@
 import './styles/global.css';
+import SignIn from './pages/login';
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <SignIn />
   );
 }
 
