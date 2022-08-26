@@ -1,9 +1,8 @@
+import ResponsiveAppBar from "../components/AppBar";
 
 
 export function Inbox() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <ResponsiveAppBar />
   )
 };
