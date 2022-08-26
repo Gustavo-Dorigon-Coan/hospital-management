@@ -1,7 +1,8 @@
 import './styles/global.css';
-import SignIn from './pages/login';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignUp from './pages/register';
+import SignIn from './pages/login';
+import { Inbox } from './pages/inbox';
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <Routes>
         <Route path='/login' element={<SignIn />} />
         <Route path='/register' element={<SignUp />} />
+        <Route path='/inbox' element={<Inbox />} />
         <Route path='*' element={<SignIn />} />
-
       </Routes>
     </BrowserRouter>
 
