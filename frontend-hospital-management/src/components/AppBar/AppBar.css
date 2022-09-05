@@ -3,3 +3,9 @@
   background-color: rgb(192, 111, 111);
 }
   
+
+.center-img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

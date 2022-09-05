@@ -4,7 +4,7 @@ import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import './List.css';
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 150 },
+  { field: 'id', headerName: 'Código', width: 150 },
   {
     field: 'firstName',
     headerName: 'Primeiro Nome',
@@ -27,7 +27,6 @@ const columns: GridColDef[] = [
   {
     field: 'fullName',
     headerName: 'Nome Completo',
-    description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 300,
     valueGetter: (params: GridValueGetterParams) =>
