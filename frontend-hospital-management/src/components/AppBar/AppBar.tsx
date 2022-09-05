@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import './AppBar.css';
 const cruzhospital = require("../../assets/cruzhospital.png");
+const config = require("../../assets/settings.png");
 
 const pages = ['Lista Espera', 'Senhas', 'Cadastros'];
 const settings = ['Perfil', 'Conta', 'Dashboard', 'Sair'];
@@ -129,7 +130,7 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Abrir Configurações">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <img src={config} width={40} />
                 </IconButton>
               </Tooltip>
               <Menu

@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+const user = require("../assets/user.png");
 
 
 const theme = createTheme();
@@ -37,8 +38,7 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          </Avatar>
+          <img src={user} width={50} />
           <Typography component="h1" variant="h5">
             Bem Vindo!!
           </Typography>
@@ -67,16 +67,18 @@ export default function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              <Link to='/inbox'>
-                Login
-              </Link>
-            </Button>
+            <div>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                <Link to='/inbox'>
+                  Login
+                </Link>
+              </Button>
+            </div>
             <Grid container>
               <Grid item xs>
                 <Link to='/'>
@@ -92,6 +94,6 @@ export default function SignIn() {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
