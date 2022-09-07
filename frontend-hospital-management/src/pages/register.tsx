@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const user = require("../assets/user.png");
+
 
 const theme = createTheme();
 
@@ -37,8 +39,7 @@ export default function SignUp(props: any) {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          </Avatar>
+          <img src={user} width={50} />
           <Typography component="h1" variant="h5">
             Registre-se!!
           </Typography>
@@ -111,6 +112,6 @@ export default function SignUp(props: any) {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
