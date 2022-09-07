@@ -11,7 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import './AppBar.css';
+
+import './appBar.css';
 
 const cruzhospital = require("../../assets/cruzhospital.png");
 const config = require("../../assets/settings.png");

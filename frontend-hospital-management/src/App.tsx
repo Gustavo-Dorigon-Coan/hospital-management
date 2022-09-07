@@ -1,8 +1,8 @@
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SignUp from './pages/register';
-import SignIn from './pages/login';
-import { Inbox } from './pages/inbox';
+import SignUp from './components/SignUp/singup';
+import SignIn from './components/SignIn/singin';
+import { Inbox } from './pages/Inbox/inbox';
 
 function App() {
   return (

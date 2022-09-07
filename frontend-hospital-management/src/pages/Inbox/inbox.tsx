@@ -1,6 +1,5 @@
-import ResponsiveAppBar from "../components/AppBar/AppBar";
-import DataGridDemo from "../components/List/List";
-
+import ResponsiveAppBar from "../../components/AppBar/appBar";
+import DataGridDemo from "../../components/List/list";
 
 export function Inbox() {
   return (
