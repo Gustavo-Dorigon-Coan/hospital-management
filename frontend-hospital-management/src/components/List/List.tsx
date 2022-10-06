@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import ButtonAppBar from '../AppBar/appBar';
 
 import './list.css';
 
@@ -49,6 +50,7 @@ const rows = [
 export default function DataGridDemo() {
   return (
     <div className='container-list-font'>
+      <ButtonAppBar />
       <Box sx={{ height: 500, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
         <DataGrid
           rows={rows}

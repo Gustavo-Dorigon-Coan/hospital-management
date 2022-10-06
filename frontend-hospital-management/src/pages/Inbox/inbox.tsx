@@ -1,12 +1,10 @@
-import ResponsiveAppBar from "../../components/AppBar/appBar";
-import DataGridDemo from "../../components/List/list";
+import ButtonAppBar from "../../components/AppBar/appBar";
 
 export function Inbox() {
   return (
     <div>
-      <ResponsiveAppBar />
+      <ButtonAppBar />
       <div className="container-list-font">
-        <DataGridDemo />
       </div>
     </div>
   )

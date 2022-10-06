@@ -1,4 +1,22 @@
-.color-header {
-  color: black;
-  background-color: #1976d2;
+.container {
+  padding: 1rem 1rem 1rem;
+  justify-content: space-between;
+}
+
+.conteiner-button {
+  border: 2rem;
+  border-radius: 1rem;
+  border-color: black;
+  justify-content: space-between;
+  display: center;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(37 112 184);
+  color: white;
+
+
+}
+
+button:hover {
+  filter: brightness(0.8);
 }

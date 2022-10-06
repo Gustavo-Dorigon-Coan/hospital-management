@@ -67,19 +67,19 @@ export default function SignIn() {
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Lembrar-me"
             />
             <div>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                <Link to='/inbox'>
+              <Link to='/inbox'>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                >
                   Login
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
             <Grid container>
               <Grid item xs>

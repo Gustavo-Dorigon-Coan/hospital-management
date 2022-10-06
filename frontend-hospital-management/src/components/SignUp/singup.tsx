@@ -90,22 +90,24 @@ export default function SignUp(props: any) {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="Você aceita disponibilizar seus dados."
+                  label="Aceitar Termos de Uso."
                 />
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Registrar
-            </Button>
+            <Link to='/inbox'>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Registrar
+              </Button>
+            </Link>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link to='/login' >
-                  Você já possui conta? Logar
+                  Você já possui conta? Logar.
                 </Link>
               </Grid>
             </Grid>
