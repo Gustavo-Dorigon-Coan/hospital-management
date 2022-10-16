@@ -1,4 +1,4 @@
-import ButtonAppBar from "../../components/AppBar/appBar";
+import ButtonAppBar from "../../components/AppBar/appBar"
 
 export function Inbox() {
   return (
