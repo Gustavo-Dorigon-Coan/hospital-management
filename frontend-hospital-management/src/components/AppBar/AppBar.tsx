@@ -31,9 +31,11 @@ export default function ButtonAppBar() {
                 Lista de Espera
               </button>
             </Link>
-            <button className='conteiner-button'>
-              Senha
-            </button>
+            <Link to='/senha'>
+              <button className='conteiner-button'>
+                Senha
+              </button>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>

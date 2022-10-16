@@ -1,4 +1,4 @@
-import DataGridDemo from "../components/List/list";
+import DataGridDemo from "../../components/List/list";
 
 export function Lista() {
   return (
