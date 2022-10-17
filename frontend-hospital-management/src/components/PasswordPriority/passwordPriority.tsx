@@ -12,9 +12,9 @@ export default function PasswordPriority() {
         <div className='container-text'>
           Senha Prioritária
         </div>
-        <h1 className='container-number'>
+        <div className='container-number'>
           P.Nº: 45
-        </h1>
+        </div>
         <div className='container-description'>
           Senha destinada ao público prioritário.
         </div>
