@@ -1,6 +1,10 @@
+.container-div {
+  display: flex;
+  align-items: center;
+}
+
 .container {
-  padding: 1rem 1rem 1rem;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .conteiner-button {
@@ -13,10 +17,18 @@
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(37 112 184);
   color: white;
-
-
 }
 
 button:hover {
   filter: brightness(0.8);
+}
+
+button:focus {
+  outline-style: none;
+}
+
+.teste {
+  display: flex;
+  float: right;
+  padding: 0.3% 0%;
 }
