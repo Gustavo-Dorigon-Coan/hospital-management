@@ -1,30 +1,14 @@
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import ButtonAppBar from '../AppBar/appBar';
+import IconButton from '@mui/material/IconButton';
+import { Avatar } from '@mui/material';
 
 import './list.css';
+const adicionar = require("../../assets/adicionar.png");
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'Código', width: 150 },
-  {
-    field: 'firstName',
-    headerName: 'Primeiro Nome',
-    width: 300,
-    editable: true,
-  },
-  {
-    field: 'lastName',
-    headerName: 'Sobrenome',
-    width: 300,
-    editable: true,
-  },
-  {
-    field: 'age',
-    headerName: 'Idade',
-    type: 'number',
-    width: 200,
-    editable: true,
-  },
+  { field: 'id', headerName: 'Código', width: 150, editable: true },
   {
     field: 'fullName',
     headerName: 'Nome Completo',
@@ -33,18 +17,33 @@ const columns: GridColDef[] = [
     valueGetter: (params: GridValueGetterParams) =>
       `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
+  {
+    field: 'age',
+    headerName: 'Idade',
+    type: 'number',
+    width: 200,
+    editable: false,
+  },
+  {
+    field: 'symptoms',
+    headerName: 'Sintomas/Problemas',
+    type: 'text',
+    width: 450,
+    editable: false,
+  },
 ];
 
+
 const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+  { id: 1, lastName: 'João Da Silva', age: 70, symptoms: 'Dores de barriga acompanhado com dores de cabeça' },
+  { id: 2, lastName: 'Gleberson Apiriqueta', age: 65, symptoms: 'Dores de cabeça' },
+  { id: 3, lastName: 'Saunara Das Neves', age: 14, symptoms: 'Vomito seguido de diarreia' },
+  { id: 4, lastName: 'Nacim de Sistemas', age: 20, symptoms: 'Dores nas costas' },
+  { id: 5, lastName: 'Dexter Fleder', age: 25, symptoms: 'Dores nas pernas' },
+  { id: 6, lastName: 'Kolibali Naster', age: 37, symptoms: 'Barriga inchada' },
+  { id: 7, lastName: 'Stefani do Anjos', age: 42, symptoms: 'Machucou jogando vôlei' },
+  { id: 8, lastName: 'Glades Das Dores', age: 54, symptoms: 'Pisou em um prego' },
+  { id: 9, lastName: 'Jonas Scobar', age: 10, symptoms: 'Se ralou de bicicleta' },
 ];
 
 export default function DataGridDemo() {
@@ -55,13 +54,20 @@ export default function DataGridDemo() {
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
+          pageSize={10}
+          rowsPerPageOptions={[10]}
           disableSelectionOnClick
           experimentalFeatures={{ newEditingApi: true }}
         />
+        <h1>teste</h1>
       </Box>
+      <footer>
+        <IconButton>
+          <Avatar>
+            <img src={adicionar} width={50} />
+          </Avatar>
+        </IconButton>
+      </footer>
     </div>
   );
 }
