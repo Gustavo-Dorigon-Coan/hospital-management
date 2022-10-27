@@ -16,7 +16,6 @@ export default function ButtonAppBar() {
     <Box sx={{ flexGrow: 5 }}>
       <AppBar position="static">
         <Toolbar>
-
           <div className='container'>
             <div className='teste'>
               <Link to='/*'>
