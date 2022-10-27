@@ -59,7 +59,6 @@ export default function DataGridDemo() {
           disableSelectionOnClick
           experimentalFeatures={{ newEditingApi: true }}
         />
-        <h1>teste</h1>
       </Box>
       <footer>
         <IconButton>
