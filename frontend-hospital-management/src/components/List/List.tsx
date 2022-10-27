@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridApi, GridCellValue, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import ButtonAppBar from '../AppBar/appBar';
 import IconButton from '@mui/material/IconButton';
-import { Avatar } from '@mui/material';
+import { Avatar, Button } from '@mui/material';
 
 import './list.css';
 const adicionar = require("../../assets/adicionar.png");
@@ -31,6 +31,19 @@ const columns: GridColDef[] = [
     width: 450,
     editable: false,
   },
+  {
+    field: "action",
+    headerName: "Action",
+    sortable: false,
+    renderCell: (params) => {
+      const senhaPrioritaria = (e: any) => {
+        e.stopPropagation(); // don't select this row after clicking
+        return alert("AQUI IRA GERAR UMA SENHA PRIORITÁRIA");
+      };
+      return <Button onClick={senhaPrioritaria}>Gera Senha</Button>;
+    }
+  },
+
 ];
 
 
