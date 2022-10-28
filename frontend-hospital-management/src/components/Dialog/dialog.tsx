@@ -1,67 +1,115 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Dialog, { DialogProps } from '@mui/material/Dialog';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import IconButton from '@mui/material/IconButton';
+import Box from '@mui/material/Box';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
-export default function ScrollDialog() {
+import './dialog.css';
+import ButtonGenre from '../ButtonGenre/buttonGenre';
+import ButtonHealth from '../ButtonHealth/buttonhealth';
+const adicionar = require("../../assets/adicionar.png");
+
+export default function DialogForm() {
   const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState<DialogProps['scroll']>('paper');
 
-  const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
+  const [value, setValue] = React.useState('female');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
+
+  const handleClickOpen = () => {
     setOpen(true);
-    setScroll(scrollType);
   };
 
-  const handleClose = () => {
+  const handleCloseSave = () => {
     setOpen(false);
+    alert("Registro salvo com sucesso");
   };
 
-  const descriptionElementRef = React.useRef<HTMLElement>(null);
-  React.useEffect(() => {
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-  }, [open]);
+  const handleCloseCancel = () => {
+    setOpen(false);
+    alert("Erro ao salvar registro");
+  };
 
   return (
     <div>
-      <Button onClick={handleClickOpen('paper')}>scroll=paper</Button>
-      <Button onClick={handleClickOpen('body')}>scroll=body</Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        scroll={scroll}
-        aria-labelledby="scroll-dialog-title"
-        aria-describedby="scroll-dialog-description"
-      >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
-          <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            {[...new Array(50)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-              )
-              .join('\n')}
+      <IconButton onClick={handleClickOpen}>
+        <img src={adicionar} width={40} />
+      </IconButton>
+      <Dialog open={open} onClose={handleClickOpen}>
+        <DialogTitle>Inserir Novo Registro</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Área destinada a novas inserções de dados dos pacientes!!
           </DialogContentText>
+          <Box component="form">
+            <div className='container-input-text'>
+              <TextField
+                margin="normal"
+                required
+                id="primaryName"
+                label="Primeiro Nome"
+                name="primaryName"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                id="lastName"
+                label="Sobrenome"
+                name="lastName"
+                autoFocus
+              />
+            </div>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="name"
+              label="Nome Completo"
+              name="name"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="age"
+              label="Idade"
+              name="age"
+              type="number"
+              autoFocus
+            />
+            <ButtonGenre />
+            <br></br>
+            <ButtonHealth />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="symptoms"
+              label="Sintomas"
+              name="symptoms"
+              autoFocus
+            />
+          </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleCloseCancel}>Cancelar</Button>
+          <Button onClick={handleCloseSave}>Salvar</Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </div >
   );
 }

@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import { Avatar, Button } from '@mui/material';
 
 import './list.css';
+import DialogForm from '../Dialog/dialog';
 const adicionar = require("../../assets/adicionar.png");
 const upload = require("../../assets/upload.png");
 
@@ -98,7 +99,7 @@ export default function DataGridDemo() {
   return (
     <div className='container-list-font'>
       <ButtonAppBar />
-      <Box sx={{ height: 630, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
+      <Box sx={{ height: 610, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
         <DataGrid
           rows={rows}
           columns={columns}
@@ -110,9 +111,7 @@ export default function DataGridDemo() {
       </Box>
       <footer>
         <IconButton>
-          <Avatar>
-            <img src={adicionar} width={50} />
-          </Avatar>
+          <DialogForm />
         </IconButton>
       </footer>
     </div>
