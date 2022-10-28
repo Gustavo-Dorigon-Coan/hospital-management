@@ -13,21 +13,12 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
-const user = require("../../assets/user.png");
+const password = require("../../assets/password.png");
 
 
 const theme = createTheme();
 
-export default function SignIn() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
+export default function RedefinePassword() {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -40,59 +31,52 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <img src={user} width={50} />
+          <img src={password} width={60} />
           <Typography component="h1" variant="h5">
-            Bem Vindo!!
+            Recuperar Senha!!
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email"
-              name="email"
-              autoComplete="email"
-              autoFocus
+              name="currentPassword"
+              label="Senha Atual"
+              type="password"
+              id="currentPassword"
+              autoComplete="current-password"
             />
             <TextField
               margin="normal"
               required
               fullWidth
               name="password"
-              label="Senha"
+              label="Nova Senha"
+              type="password"
+              autoComplete="current-password"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Confirmar Senha"
               type="password"
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Lembrar-me"
-            />
             <div>
-              <Link to='/inbox'>
+              <Link to='/login'>
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Login
+                  Salvar
                 </Button>
               </Link>
             </div>
-            <Grid container>
-              <Grid item xs>
-                <Link to='/resetPassword'>
-                  Esqueceu a senha?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link to='/register'>
-                  {"Não tem conta? Criar!"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>

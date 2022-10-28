@@ -90,7 +90,7 @@ export default function SignUp(props: any) {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="Aceitar Termos de Uso."
+                  label="Instituição"
                 />
               </Grid>
             </Grid>
