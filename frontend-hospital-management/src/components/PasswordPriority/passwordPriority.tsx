@@ -13,13 +13,13 @@ export default function PasswordPriority() {
           Senha Prioritária
         </div>
         <div className='container-number'>
-          P.Nº: 45
+          P.Nº: 5
         </div>
         <div className='container-description'>
           Senha destinada ao público prioritário.
         </div>
       </CardContent>
-      <div className='container-button'>
+      <div className='container-button-priori'>
         <CardActions>
           <Button size="small">Antecessor</Button>
           <Button size="small">Sucessor</Button>

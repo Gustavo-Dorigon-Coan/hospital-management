@@ -6,9 +6,15 @@ import { Avatar, Button } from '@mui/material';
 
 import './list.css';
 const adicionar = require("../../assets/adicionar.png");
+const upload = require("../../assets/upload.png");
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'Código', width: 150, editable: true },
+  {
+    field: 'id',
+    headerName: 'Código',
+    width: 60,
+    editable: true,
+  },
   {
     field: 'fullName',
     headerName: 'Nome Completo',
@@ -21,7 +27,7 @@ const columns: GridColDef[] = [
     field: 'age',
     headerName: 'Idade',
     type: 'number',
-    width: 200,
+    width: 50,
     editable: false,
   },
   {
@@ -32,18 +38,47 @@ const columns: GridColDef[] = [
     editable: false,
   },
   {
-    field: "action",
-    headerName: "Action",
+    field: "prioritaria",
+    headerName: "Senha Prioritária",
     sortable: false,
+    width: 120,
     renderCell: (params) => {
       const senhaPrioritaria = (e: any) => {
-        e.stopPropagation(); // don't select this row after clicking
+        e.stopPropagation();
         return alert("AQUI IRA GERAR UMA SENHA PRIORITÁRIA");
       };
-      return <Button onClick={senhaPrioritaria}>Gera Senha</Button>;
+      return <Button variant="contained" color="error" size="small" onClick={senhaPrioritaria}>Prioritária</Button>;
     }
   },
-
+  {
+    field: "geral",
+    headerName: "Senha Geral",
+    sortable: false,
+    width: 100,
+    renderCell: (params) => {
+      const senhaPrioritaria = (e: any) => {
+        e.stopPropagation();
+        return alert("AQUI IRA GERAR UMA SENHA GERAL");
+      };
+      return <Button variant="contained" color="success" size="small" onClick={senhaPrioritaria}>Geral</Button>;
+    }
+  },
+  {
+    field: "arquivos",
+    headerName: "Anexos",
+    sortable: false,
+    width: 70,
+    renderCell: (params) => {
+      const senhaPrioritaria = (e: any) => {
+        e.stopPropagation();
+        return
+      };
+      return <Button component="label" onClick={senhaPrioritaria}>
+        <input hidden accept="image/*" multiple type="file" />
+        <img src={upload} width={35} />
+      </Button>;
+    }
+  },
 ];
 
 
@@ -63,7 +98,7 @@ export default function DataGridDemo() {
   return (
     <div className='container-list-font'>
       <ButtonAppBar />
-      <Box sx={{ height: 500, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
+      <Box sx={{ height: 630, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
         <DataGrid
           rows={rows}
           columns={columns}

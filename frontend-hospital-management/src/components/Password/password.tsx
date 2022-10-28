@@ -26,7 +26,7 @@ export default function Password() {
               Senha destinada ao público que não prioritário.
             </div>
           </CardContent>
-          <div className='container-button'>
+          <div className='container-button-geral'>
             <CardActions>
               <Button size="small">Antecessor</Button>
               <Button size="small">Sucessor</Button>
