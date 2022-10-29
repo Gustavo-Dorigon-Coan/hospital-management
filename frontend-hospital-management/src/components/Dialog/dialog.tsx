@@ -11,34 +11,68 @@ import Grid from '@mui/material/Grid';
 import './dialog.css';
 import ButtonGenre from '../ButtonGenre/buttonGenre';
 import ButtonHealth from '../ButtonHealth/buttonhealth';
+import CloseIcon from '@mui/icons-material/Close';
+import { Alert, Snackbar } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Alerts from '../Alert/alert';
+import SimpleSnackbar from '../Alert/alert';
 
 const adicionar = require("../../assets/adicionar.png");
 
 export default function DialogForm() {
-  const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const [open, setOpen] = React.useState(false);
+  const [openDialogSave, setOpenDialogSave] = React.useState(false);
+  const [openDialogCancel, setOpenDialogCancel] = React.useState(false);
+
+  const handleClickOpenButton = () => {
     setOpen(true);
   };
 
-  const handleCloseSave = () => {
-    setOpen(false);
-    alert("Registro salvo com sucesso");
-  };
+  // const handleCloseSave = () => {
+  //   setOpen(false);
+  //   alert("Registro salvo com sucesso");
+  // };
 
   const handleCloseCancel = () => {
     setOpen(false);
-    alert("Erro ao salvar registro");
+    setOpenDialogSave(false);
+  };
+
+  const handleCloseAlertSave = () => {
+    setOpenDialogSave(false);
+  }
+
+  const handleCloseAlertCancel = () => {
+    setOpenDialogCancel(false);
+  }
+
+  const handleClickSave = () => {
+    setOpenDialogSave(true);
+  };
+
+  const handleClickCancel = () => {
+    setOpenDialogCancel(true);
   };
 
   return (
     <div>
-      <IconButton onClick={handleClickOpen}>
+      <IconButton onClick={handleClickOpenButton}>
         <img src={adicionar} width={40} />
       </IconButton>
-      <Dialog open={open} onClose={handleClickOpen}>
-        <DialogTitle>Inserir Novo Registro</DialogTitle>
+      <Dialog open={open} onClose={handleClickOpenButton}>
+        <div>
+          <div className='flex'>
+            <DialogTitle>Insira um Novo Registro de Atendimento!</DialogTitle>
+          </div>
+          <div className='flex-position'>
+            <IconButton onClick={handleCloseCancel}>
+              <CloseIcon />
+            </IconButton>
+          </div>
+        </div>
         <DialogContent>
+          <br></br>
           <DialogContentText>
             Área destinada a novas inserções de dados dos pacientes!!
           </DialogContentText>
@@ -99,10 +133,22 @@ export default function DialogForm() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseCancel}>Cancelar</Button>
-          <Button onClick={handleCloseSave}>Salvar</Button>
+          <Button >
+          </Button>
+          <Button onClick={handleClickCancel}>Cancelar</Button>
+          <Snackbar open={openDialogCancel} autoHideDuration={4000} onClose={handleCloseAlertCancel}>
+            <Alert onClose={handleCloseAlertCancel} variant="filled" severity="error" sx={{ width: '100%' }}>
+              Ocorreu um erro ao inserir o registro de atendimento!
+            </Alert>
+          </Snackbar>
+          <Button onClick={handleClickSave}>Salvar</Button>
+          <Snackbar open={openDialogSave} autoHideDuration={4000} onClose={handleCloseAlertSave}>
+            <Alert onClose={handleCloseAlertSave} variant="filled" severity="success" sx={{ width: '100%' }}>
+              Registro de atendimento de salvo com sucesso!
+            </Alert>
+          </Snackbar>
         </DialogActions>
-      </Dialog>
+      </Dialog >
     </div >
   );
 }
