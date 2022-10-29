@@ -1,13 +1,14 @@
+import emailjs from '@emailjs/browser';
+import SendIcon from '@mui/icons-material/Send';
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import ButtonAppBar from '../AppBar/appBar';
-import IconButton from '@mui/material/IconButton';
-import { Button } from '@mui/material';
 import DialogForm from '../Dialog/dialog';
 
 import './list.css';
 
-const adicionar = require("../../assets/adicionar.png");
 const upload = require("../../assets/upload.png");
 
 const columns: GridColDef[] = [
@@ -43,13 +44,9 @@ const columns: GridColDef[] = [
     field: "prioritaria",
     headerName: "Senha Prioritária",
     sortable: false,
-    width: 120,
-    renderCell: (params) => {
-      const senhaPrioritaria = (e: any) => {
-        e.stopPropagation();
-        return alert("AQUI IRA GERAR UMA SENHA PRIORITÁRIA");
-      };
-      return <Button variant="contained" color="error" size="small" onClick={senhaPrioritaria}>Prioritária</Button>;
+    width: 140,
+    renderCell: () => {
+      return <Button variant="contained" endIcon={<SendIcon />} color="error" size="small" onClick={sendEmailPriority}>Prioritária</Button>;
     }
   },
   {
@@ -57,12 +54,8 @@ const columns: GridColDef[] = [
     headerName: "Senha Geral",
     sortable: false,
     width: 100,
-    renderCell: (params) => {
-      const senhaPrioritaria = (e: any) => {
-        e.stopPropagation();
-        return alert("AQUI IRA GERAR UMA SENHA GERAL");
-      };
-      return <Button variant="contained" color="success" size="small" onClick={senhaPrioritaria}>Geral</Button>;
+    renderCell: () => {
+      return <Button variant="contained" endIcon={<SendIcon />} color="warning" size="small" onClick={sendEmailGeneral}>Geral</Button>;
     }
   },
   {
@@ -70,12 +63,8 @@ const columns: GridColDef[] = [
     headerName: "Anexos",
     sortable: false,
     width: 70,
-    renderCell: (params) => {
-      const senhaPrioritaria = (e: any) => {
-        e.stopPropagation();
-        return
-      };
-      return <Button component="label" onClick={senhaPrioritaria}>
+    renderCell: () => {
+      return <Button component="label" >
         <input hidden accept="image/*" multiple type="file" />
         <img src={upload} width={35} />
       </Button>;
@@ -95,6 +84,31 @@ const rows = [
   { id: 8, lastName: 'Glades Das Dores', age: 54, symptoms: 'Pisou em um prego' },
   { id: 9, lastName: 'Jonas Scobar', age: 10, symptoms: 'Se ralou de bicicleta' },
 ];
+
+function sendEmailPriority() {
+  const templateParams = {}
+
+  emailjs.send("service_soys3sp", "template_ywwtagu", templateParams, "iuEuy6lN76d8e2uUp")
+    .then((response) => {
+      console.log("EMAIL ENVIADO COM SUCESSO", response.status, response.text)
+      alert("EMAIL ENVIADO COM SUCESSO");
+    }, (error) => {
+      console.log("ERRO AO ENVIAR EMAIL", error)
+      alert("ERRO AO ENVIAR EMAIL");
+    })
+}
+
+function sendEmailGeneral() {
+  const templateParams = {}
+
+  emailjs.send("service_soys3sp", "template_0k72jph", templateParams, "iuEuy6lN76d8e2uUp")
+    .then((response) => {
+      console.log("EMAIL ENVIADO COM SUCESSO", response.status, response.text)
+    }, (error) => {
+      console.log("ERRO AO ENVIAR EMAIL", error)
+      alert("ERRO AO ENVIAR EMAIL");
+    })
+}
 
 export default function DataGridDemo() {
   return (
