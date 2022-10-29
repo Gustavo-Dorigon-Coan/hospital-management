@@ -7,26 +7,15 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-
+import Grid from '@mui/material/Grid';
 import './dialog.css';
 import ButtonGenre from '../ButtonGenre/buttonGenre';
 import ButtonHealth from '../ButtonHealth/buttonhealth';
+
 const adicionar = require("../../assets/adicionar.png");
 
 export default function DialogForm() {
   const [open, setOpen] = React.useState(false);
-
-  const [value, setValue] = React.useState('female');
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -53,57 +42,61 @@ export default function DialogForm() {
           <DialogContentText>
             Área destinada a novas inserções de dados dos pacientes!!
           </DialogContentText>
-          <Box component="form">
-            <div className='container-input-text'>
+          <br></br>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
               <TextField
-                margin="normal"
+                autoComplete="given-name"
+                name="firstName"
                 required
-                id="primaryName"
+                fullWidth
+                id="firstName"
                 label="Primeiro Nome"
-                name="primaryName"
                 autoFocus
               />
+            </Grid>
+            <Grid item xs={12} sm={6}>
               <TextField
-                margin="normal"
                 required
+                fullWidth
                 id="lastName"
                 label="Sobrenome"
                 name="lastName"
-                autoFocus
+                autoComplete="family-name"
               />
-            </div>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="name"
-              label="Nome Completo"
-              name="name"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="age"
-              label="Idade"
-              name="age"
-              type="number"
-              autoFocus
-            />
-            <ButtonGenre />
-            <br></br>
-            <ButtonHealth />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="symptoms"
-              label="Sintomas"
-              name="symptoms"
-              autoFocus
-            />
-          </Box>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="nameFull"
+                label="Nome Completo"
+                type="nameFull"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="age"
+                label="Idade"
+                name="age"
+                type="number"
+              />
+            </Grid>
+          </Grid>
+          <ButtonGenre />
+          <br></br>
+          <ButtonHealth />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="symptoms"
+            label="Sintomas"
+            name="symptoms"
+            autoFocus
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseCancel}>Cancelar</Button>
