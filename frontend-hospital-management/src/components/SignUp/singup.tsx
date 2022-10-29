@@ -12,8 +12,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const user = require("../../assets/user.png");
-
-
 const theme = createTheme();
 
 export default function SignUp(props: any) {

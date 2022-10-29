@@ -1,11 +1,12 @@
 import Box from '@mui/material/Box';
-import { DataGrid, GridApi, GridCellValue, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import ButtonAppBar from '../AppBar/appBar';
 import IconButton from '@mui/material/IconButton';
-import { Avatar, Button } from '@mui/material';
+import { Button } from '@mui/material';
+import DialogForm from '../Dialog/dialog';
 
 import './list.css';
-import DialogForm from '../Dialog/dialog';
+
 const adicionar = require("../../assets/adicionar.png");
 const upload = require("../../assets/upload.png");
 

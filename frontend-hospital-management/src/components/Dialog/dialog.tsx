@@ -1,21 +1,18 @@
-import * as React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import { Alert, Snackbar } from '@mui/material';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import IconButton from '@mui/material/IconButton';
 import Grid from '@mui/material/Grid';
-import './dialog.css';
+import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
+import * as React from 'react';
 import ButtonGenre from '../ButtonGenre/buttonGenre';
 import ButtonHealth from '../ButtonHealth/buttonhealth';
-import CloseIcon from '@mui/icons-material/Close';
-import { Alert, Snackbar } from '@mui/material';
-import Stack from '@mui/material/Stack';
-import Alerts from '../Alert/alert';
-import SimpleSnackbar from '../Alert/alert';
+import './dialog.css';
 
 const adicionar = require("../../assets/adicionar.png");
 
@@ -28,11 +25,6 @@ export default function DialogForm() {
   const handleClickOpenButton = () => {
     setOpen(true);
   };
-
-  // const handleCloseSave = () => {
-  //   setOpen(false);
-  //   alert("Registro salvo com sucesso");
-  // };
 
   const handleCloseCancel = () => {
     setOpen(false);

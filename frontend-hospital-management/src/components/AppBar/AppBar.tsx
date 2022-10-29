@@ -4,9 +4,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import { Link } from "react-router-dom";
 import { Avatar } from '@mui/material';
-import Tooltip from '@mui/material/Tooltip';
 
 import './appBar.css';
+
 const avatar = require("../../assets/user.png");
 const logout = require("../../assets/logout.png");
 
