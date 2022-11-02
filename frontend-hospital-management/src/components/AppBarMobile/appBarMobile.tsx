@@ -1,14 +1,13 @@
-import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import MobileDialog from '../MobileDialog/mobileDialog';
 
 import './appBarMobile.css';
+
+const userMobile = require("../../assets/userMobile.png");
 
 export default function AppBarMobile() {
   return (
@@ -20,19 +19,18 @@ export default function AppBarMobile() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 8 }}
           >
-            <MenuIcon />
+            <img src={userMobile} width={50} />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Hospital
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <div className='container-font-mobile'>
+            HOSPITAL
+          </div>
         </Toolbar>
       </AppBar>
       <div className='container-position'>
         <div className='container-align-form'>
-          <Link to='/senha'>
+          <Link to=''>
             <button className='my-button'>
               Atualizar Cadastro
             </button>
@@ -45,6 +43,13 @@ export default function AppBarMobile() {
           <button className='my-button'>
             Senha
           </button>
+        </div>
+        <div className='container-align-exit'>
+          <Link to='*'>
+            <button className='my-button-exit'>
+              Sair
+            </button>
+          </Link>
         </div>
       </div>
     </Box >
