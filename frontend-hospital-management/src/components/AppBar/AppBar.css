@@ -27,7 +27,7 @@ button:focus {
   outline-style: none;
 }
 
-.teste {
+.container-icon-button {
   display: flex;
   float: right;
   padding: 0.3% 0%;

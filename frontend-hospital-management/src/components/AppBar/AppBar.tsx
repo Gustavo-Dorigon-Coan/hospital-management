@@ -1,9 +1,9 @@
+import { Avatar } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
 import { Link } from "react-router-dom";
-import { Avatar } from '@mui/material';
 
 import './appBar.css';
 
@@ -17,7 +17,7 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <div className='container'>
-            <div className='teste'>
+            <div className='container-icon-button'>
               <Link to='/*'>
                 <IconButton>
                   <Avatar>

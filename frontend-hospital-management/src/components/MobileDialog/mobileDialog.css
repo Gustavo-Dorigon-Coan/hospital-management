@@ -1,0 +1,12 @@
+.flex-position-mobile {
+  float: right;
+}
+
+.flex-mobile {
+  display: flex;
+  position: absolute;
+}
+
+.style-button {
+  padding: 20px 60px;
+}
