@@ -2,8 +2,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import { Link } from 'react-router-dom';
-import MobileDialog from '../MobileDialog/mobileDialog';
 
 import './appBarMobile.css';
 
@@ -28,30 +26,6 @@ export default function AppBarMobile() {
           </div>
         </Toolbar>
       </AppBar>
-      <div className='container-position'>
-        <div className='container-align-form'>
-          <Link to=''>
-            <button className='my-button'>
-              Atualizar Cadastro
-            </button>
-          </Link>
-        </div>
-        <div className='container-align-ra'>
-          <MobileDialog />
-        </div>
-        <div className='container-align-password'>
-          <button className='my-button'>
-            Senha
-          </button>
-        </div>
-        <div className='container-align-exit'>
-          <Link to='*'>
-            <button className='my-button-exit'>
-              Sair
-            </button>
-          </Link>
-        </div>
-      </div>
     </Box >
   );
 }

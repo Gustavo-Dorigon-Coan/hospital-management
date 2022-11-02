@@ -1,6 +1,6 @@
 import RedefinePassword from "../../components/RedefinePassword/redefinePassword";
 
-export function Register() {
+export function ResetPassword() {
   return (
     <div>
       <RedefinePassword />

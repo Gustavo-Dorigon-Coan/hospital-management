@@ -1,9 +1,11 @@
 import AppBarMobile from "../../components/AppBarMobile/appBarMobile";
+import InboxMobile from "../../components/InboxMobile/inboxMobile";
 
-export function Senha() {
+export function MobileHome() {
   return (
     <div>
       <AppBarMobile />
+      <InboxMobile/>
     </div>
   )
 };

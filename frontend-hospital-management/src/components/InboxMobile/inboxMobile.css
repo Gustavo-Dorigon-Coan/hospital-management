@@ -1,0 +1,75 @@
+.container-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-align-ra {
+  bottom: 58%;
+  position: absolute;
+}
+
+.container-align-password {
+  bottom: 49%;
+  position: absolute;
+}
+
+.container-align-form {
+  bottom: 67%;
+  position: absolute;
+}
+
+.container-align-exit {
+  bottom: 20%;
+  position: absolute;
+}
+
+.container-font-mobile {
+  font-family: Trebuchet MS;
+  font-size: 1.7rem;
+}
+
+
+.my-button {
+  background-color: #e34836;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 21px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 0px solid #000;
+  border-radius: 10px;
+  display: inline-block
+}
+
+.my-button:hover {
+  background-color: #e66a60;
+}
+
+.my-button:active {
+  transform: scale(0.95);
+}
+
+.my-button-exit {
+  background-color: #47C15B;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 21px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 0px solid #000;
+  border-radius: 10px;
+  display: inline-block
+}
+
+.my-button-exit:hover {
+  background-color: #47C15B;
+}
+
+.my-button-exit:active {
+  transform: scale(0.95);
+}

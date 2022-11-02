@@ -1,12 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import AppBarMobile from './components/AppBarMobile/appBarMobile';
-import DataGridDemo from './components/List/list';
-import PasswordGeneral from './components/Password/password';
-import RedefinePassword from './components/RedefinePassword/redefinePassword';
 import SignIn from './components/SignIn/singin';
-import SignUp from './components/SignUp/singup';
 import './index.css';
 import { Inbox } from './pages/Inbox/inbox';
+import { Lista } from './pages/Lista/lista';
+import { Login } from './pages/Login/login';
+import { MobileHome } from './pages/MobileHome/mobileHome';
+import { ResetPassword } from './pages/RedefinePassword/resetPassword';
+import { Register } from './pages/Register/register';
+import { Senha } from './pages/Senha/senha';
+import { SenhaMobile } from './pages/SenhaMobile/senhaMobile';
 
 
 
@@ -15,13 +17,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<SignIn />} />
-          <Route path='/register' element={<SignUp />} />
-          <Route path='/resetPassword' element={<RedefinePassword />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/resetPassword' element={<ResetPassword />} />
           <Route path='/inbox' element={<Inbox />} />
-          <Route path='/lista' element={<DataGridDemo />} />
-          <Route path='/senha' element={<PasswordGeneral />} />
-          <Route path='/mobileHome' element={<AppBarMobile />} />
+          <Route path='/lista' element={<Lista />} />
+          <Route path='/senha' element={<Senha />} />
+          <Route path='/mobileHome' element={<MobileHome />} />
+          <Route path='/senhaMobile' element={<SenhaMobile />} />
           <Route path='*' element={<SignIn />} />
         </Routes>
       </BrowserRouter>
