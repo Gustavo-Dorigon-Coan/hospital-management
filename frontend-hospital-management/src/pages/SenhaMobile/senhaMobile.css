@@ -1,0 +1,33 @@
+.container-position-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-align-back {
+  bottom: 10%;
+  position: absolute;
+}
+
+
+.my-button-back {
+  background-color: #3e71b4;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 21px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 0px solid #000;
+  border-radius: 10px;
+  display: inline-block
+}
+
+.my-button-back:hover {
+  opacity: transparent;
+}
+
+.my-button-back:active {
+  transform: scale(0.95);
+}
