@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -33,6 +32,7 @@ export default function DialogForm() {
 
   const handleCloseAlertSave = () => {
     setOpenDialogSave(false);
+    setOpen(false);
   }
 
   const handleCloseAlertCancel = () => {
@@ -64,11 +64,6 @@ export default function DialogForm() {
           </div>
         </div>
         <DialogContent>
-          <br></br>
-          <DialogContentText>
-            Área destinada a novas inserções de dados dos pacientes!!
-          </DialogContentText>
-          <br></br>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -129,13 +124,13 @@ export default function DialogForm() {
           </Button>
           <Button onClick={handleClickCancel}>Cancelar</Button>
           <Snackbar open={openDialogCancel} autoHideDuration={4000} onClose={handleCloseAlertCancel}>
-            <Alert onClose={handleCloseAlertCancel} variant="filled" severity="error" sx={{ width: '100%' }}>
+            <Alert onClose={handleCloseAlertCancel} variant="filled" severity="error" sx={{ width: '70%' }}>
               Ocorreu um erro ao inserir o registro de atendimento!
             </Alert>
           </Snackbar>
           <Button onClick={handleClickSave}>Salvar</Button>
-          <Snackbar open={openDialogSave} autoHideDuration={4000} onClose={handleCloseAlertSave}>
-            <Alert onClose={handleCloseAlertSave} variant="filled" severity="success" sx={{ width: '100%' }}>
+          <Snackbar open={openDialogSave} autoHideDuration={1000} onClose={handleCloseAlertSave}>
+            <Alert onClose={handleCloseAlertSave} variant="filled" severity="success" sx={{ width: '75%' }}>
               Registro de atendimento de salvo com sucesso!
             </Alert>
           </Snackbar>

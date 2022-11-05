@@ -1,16 +1,15 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import { Link } from "react-router-dom";
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
 import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
+import { Link } from "react-router-dom";
 
 const user = require("../../assets/user.png");
 const theme = createTheme();
@@ -67,7 +66,7 @@ export default function SignIn() {
               label="Lembrar-me"
             />
             <div>
-              <Link to='/inbox'>
+              <Link to='/inbox' style={{ color: 'inherit',textDecoration: 'none' }}>
                 <Button
                   type="submit"
                   fullWidth
@@ -80,12 +79,12 @@ export default function SignIn() {
             </div>
             <Grid container>
               <Grid item xs>
-                <Link to='/resetPassword'>
+                <Link to='/resetPassword' style={{ color: 'inherit'}}>
                   Esqueceu a senha?
                 </Link>
               </Grid>
               <Grid item>
-                <Link to='/register'>
+                <Link to='/register' style={{ color: 'inherit' }}>
                   {"Não tem conta? Criar!"}
                 </Link>
               </Grid>

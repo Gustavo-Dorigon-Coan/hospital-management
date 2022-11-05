@@ -114,7 +114,7 @@ export default function DataGridDemo() {
   return (
     <div className='container-list-font'>
       <ButtonAppBar />
-      <Box sx={{ height: 610, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
+      <Box sx={{ height: 505, width: '100%', alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
         <DataGrid
           rows={rows}
           columns={columns}

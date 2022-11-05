@@ -7,6 +7,7 @@ import { Login } from './pages/Login/login';
 import { MobileHome } from './pages/MobileHome/mobileHome';
 import { ResetPassword } from './pages/RedefinePassword/resetPassword';
 import { Register } from './pages/Register/register';
+import RedefinirSenha from './pages/ResetPassword/redefinirSenha';
 import { Senha } from './pages/Senha/senha';
 import { SenhaMobile } from './pages/SenhaMobile/senhaMobile';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/senha' element={<Senha />} />
           <Route path='/mobileHome' element={<MobileHome />} />
           <Route path='/senhaMobile' element={<SenhaMobile />} />
+          <Route path='/redefinirSenha' element={<RedefinirSenha />} />
           <Route path='*' element={<SignIn />} />
         </Routes>
       </BrowserRouter>

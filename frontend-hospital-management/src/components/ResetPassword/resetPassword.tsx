@@ -10,14 +10,14 @@ import { Link } from "react-router-dom";
 const password = require("../../assets/password.png");
 const theme = createTheme();
 
-export default function RedefinePassword() {
+export default function ResetPassword() {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 15,
+            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -25,30 +25,47 @@ export default function RedefinePassword() {
         >
           <img src={password} width={60} />
           <Typography component="h1" variant="h5">
-            Recuperar Senha!!
+            Redefinir Senha!!
           </Typography>
-          <div>
-            Insira seu email para redefinir a sua senha!
-          </div>
-          <div></div>
-          <Box component="form" noValidate sx={{ mt: 0, width: 500 }}>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
               name="currentPassword"
-              label="Email"
-              type="email"
+              label="Senha Atual"
+              type="password"
+              id="currentPassword"
+              autoComplete="current-password"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Nova Senha"
+              type="password"
+              autoComplete="current-password"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Confirmar Senha"
+              type="password"
+              id="password"
+              autoComplete="current-password"
             />
             <div>
-              <Link to='/login' style={{ color: 'inherit', textDecoration: 'none' }}>
+              <Link to='/inbox' style={{ color: 'inherit', textDecoration: 'none' }}>
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
-                  sx={{ mt: 1, mb: 2 }}
+                  sx={{ mt: 3, mb: 2 }}
                 >
-                  Enviar
+                  Salvar
                 </Button>
               </Link>
             </div>

@@ -4,11 +4,11 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from "react-router-dom";
+import Options from '../Options/options';
 
 import './appBar.css';
 
 const avatar = require("../../assets/user.png");
-const logout = require("../../assets/logout.png");
 
 
 export default function ButtonAppBar() {
@@ -18,13 +18,14 @@ export default function ButtonAppBar() {
         <Toolbar>
           <div className='container'>
             <div className='container-icon-button'>
-              <Link to='/*'>
+            <Options/>
+              {/* <Link to='/*'>
                 <IconButton>
                   <Avatar>
                     <img src={logout} width={40} />
                   </Avatar>
                 </IconButton>
-              </Link>
+              </Link> */}
             </div>
             <div className='container-div'>
               <div>
