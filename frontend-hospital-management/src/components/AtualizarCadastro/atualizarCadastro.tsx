@@ -4,17 +4,14 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import * as React from 'react';
-import ButtonGenre from '../ButtonGenre/buttonGenre';
-import ButtonHealth from '../ButtonHealth/buttonhealth';
 
-import './mobileDialog.css';
+import './atualizarCadastro.css';
 
-export default function MobileDialog() {
+export default function AtualizarCadastro() {
 
   const [open, setOpen] = React.useState(false);
   const [openDialogSave, setOpenDialogSave] = React.useState(false);
@@ -49,24 +46,42 @@ export default function MobileDialog() {
   return (
     <div>
       <button className='my-button' onClick={handleClickOpenButton} >
-        Inserir Registro Atendimento
+        Atualizar Cadastro
       </button>
       <Dialog open={open} onClose={handleClickOpenButton}>
         <div>
-          <div className='flex-mobile'>
-            <DialogTitle>Registro de Atendimento!</DialogTitle>
+          <div className='flex-mobile-cadastro'>
+            <DialogTitle>Atualização de Cadastro</DialogTitle>
           </div>
-          <div className='flex-position-mobile'>
+          <div className='flex-position-mobile-cadastro'>
             <IconButton onClick={handleCloseCancel}>
               <CloseIcon />
             </IconButton>
           </div>
         </div>
         <DialogContent>
-          <DialogContentText>
-            Insira sua solicitação, conforme os dados apresentados abaixo!
-          </DialogContentText>
           <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="given-name"
+                name="firstName"
+                required
+                fullWidth
+                id="firstName"
+                label="Primeiro Nome"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                fullWidth
+                id="lastName"
+                label="Sobrenome"
+                name="lastName"
+                autoComplete="family-name"
+              />
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 required
@@ -80,25 +95,50 @@ export default function MobileDialog() {
               <TextField
                 required
                 fullWidth
-                id="age"
-                label="Idade"
-                name="age"
-                type="number"
+                name="email"
+                label="Email"
+                type="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                label="Bairro"
+                name="symptoms"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                label="End."
+                name="endereco"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                label="Municipio"
+                name="municipio"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                label="Telefone"
+                name="telefone"
+                type="tel"
+                placeholder="(xx)x-xxxx-xxxx"
+                autoFocus
               />
             </Grid>
           </Grid>
-          <ButtonGenre />
-          <br></br>
-          <ButtonHealth />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="symptoms"
-            label="Sintomas"
-            name="symptoms"
-            autoFocus
-          />
         </DialogContent>
         <DialogActions>
           <Button >
@@ -106,13 +146,13 @@ export default function MobileDialog() {
           <Button onClick={handleClickCancel}>Cancelar</Button>
           <Snackbar open={openDialogCancel} autoHideDuration={4000} onClose={handleCloseAlertCancel}>
             <Alert onClose={handleCloseAlertCancel} variant="filled" severity="error" sx={{ width: '100%' }}>
-              Ocorreu um erro ao inserir o registro de atendimento!
+              Ocorreu um erro ao atualizar o cadastro!
             </Alert>
           </Snackbar>
           <Button onClick={handleClickSave}>Salvar</Button>
           <Snackbar open={openDialogSave} autoHideDuration={4000} onClose={handleCloseAlertSave}>
             <Alert onClose={handleCloseAlertSave} variant="filled" severity="success" sx={{ width: '100%' }}>
-              Registro de atendimento salvo com sucesso!
+              Cadastro salvo com sucesso!
             </Alert>
           </Snackbar>
         </DialogActions>

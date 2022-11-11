@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
+import AtualizarCadastro from '../AtualizarCadastro/atualizarCadastro';
 import MobileDialog from '../MobileDialog/mobileDialog';
 
 import './inboxMobile.css';
@@ -9,11 +10,7 @@ export default function InboxMobile() {
     <Box sx={{ flexGrow: 1 }}>
       <div className='container-position'>
         <div className='container-align-form'>
-          <Link to=''>
-            <button className='my-button'>
-              Atualizar Cadastro
-            </button>
-          </Link>
+          <AtualizarCadastro />
         </div>
         <div className='container-align-ra'>
           <MobileDialog />

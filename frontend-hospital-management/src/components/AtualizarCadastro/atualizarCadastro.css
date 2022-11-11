@@ -1,0 +1,12 @@
+.flex-position-mobile-cadastro {
+  float: right;
+}
+
+.flex-mobile-cadastro {
+  display: flex;
+  position: absolute;
+}
+
+.style-button-cadastro {
+  padding: 20px 60px;
+}

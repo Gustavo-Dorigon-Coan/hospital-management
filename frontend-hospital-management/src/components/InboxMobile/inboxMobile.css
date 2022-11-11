@@ -39,9 +39,10 @@
   font-style: normal;
   text-decoration: none;
   padding: 1rem 2rem;
-  border: 0px solid #000;
-  border-radius: 10px;
-  display: inline-block
+  border: 0rem solid #000;
+  border-radius: 0.5rem;
+  display: inline-block;
+
 }
 
 .my-button:hover {
