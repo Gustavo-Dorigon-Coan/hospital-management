@@ -1,28 +1,43 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import { Link } from "react-router-dom";
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
 import Container from '@mui/material/Container';
+import CssBaseline from '@mui/material/CssBaseline';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import * as React from 'react';
+import { Link } from "react-router-dom";
+import { db } from '../../App';
 
 const user = require("../../assets/user.png");
 const theme = createTheme();
+
+
+
 
 export default function SignUp(props: any) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    try {
+      const docRef = addDoc(collection(db, "users"), {
+        firstName: data.get('firstName'),
+        lastName: data.get('lastName'),
+        email: data.get('email'),
+        password: data.get('password'),
+        timeCriation: serverTimestamp()
+      });
+      alert("Registro salvo com sucesso");
+    } catch (error) {
+      alert("Ocorreu um erro ao inserir o registro!!");
+    }
   };
+
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -87,20 +102,21 @@ export default function SignUp(props: any) {
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  id="organization"
                   label="Instituição"
                 />
               </Grid>
             </Grid>
-            <Link to='/inbox'>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Registrar
-              </Button>
-            </Link>
+            {/* <Link to='/inbox'> */}
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Registrar
+            </Button>
+            {/* </Link> */}
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link to='/login' >

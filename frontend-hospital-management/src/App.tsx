@@ -1,3 +1,5 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignIn from './components/SignIn/singin';
 import './index.css';
@@ -11,7 +13,17 @@ import RedefinirSenha from './pages/ResetPassword/redefinirSenha';
 import { Senha } from './pages/Senha/senha';
 import { SenhaMobile } from './pages/SenhaMobile/senhaMobile';
 
+export const firebaseApp = initializeApp({
+  apiKey: "AIzaSyD9KfFF30WxJUTQYRv9cqhd27SgErkMTeg",
+  authDomain: "hospital-5192d.firebaseapp.com",
+  projectId: "hospital-5192d",
+  storageBucket: "hospital-5192d.appspot.com",
+  messagingSenderId: "23249481686",
+  appId: "1:23249481686:web:10ff15ddf06c5b107b3e77",
+  measurementId: "G-6WBLGQFEYZ"
+});
 
+export const db = getFirestore(firebaseApp);
 
 function App() {
   return (

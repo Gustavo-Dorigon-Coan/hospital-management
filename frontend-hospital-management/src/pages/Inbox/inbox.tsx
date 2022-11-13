@@ -1,4 +1,5 @@
-import ButtonAppBar from "../../components/AppBar/appBar"
+
+import ButtonAppBar from '../../components/AppBar/appBar';
 import './inbox.css';
 
 const hospitalBackspace = require("../../assets/hospital.png");
